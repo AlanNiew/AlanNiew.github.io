@@ -1,0 +1,40 @@
+---
+layout: default
+title: 首页
+---
+<div class="hero">
+    <h1>欢迎来到我的博客</h1>
+    <p class="hero-subtitle">{{ site.description }}</p>
+</div>
+
+<div class="content-section">
+    <h2>最新文章</h2>
+    <div class="posts-list">
+        {% for post in site.posts limit: 5 %}
+        <article class="post-card">
+            <h3 class="post-card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+            <div class="post-card-meta">
+                <span class="post-date">{{ post.date | date: '%Y年%m月%d日' }}</span>
+                {% if post.categories %}
+                {% for category in post.categories %}
+                <span class="category">{{ category }}</span>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+
+    <div class="more-posts">
+        <a href="/archive.html" class="btn">查看所有文章</a>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2>关于我</h2>
+    <p>你好！我是{{ site.author }}，一名热爱技术的开发者。这个博客是我记录学习心得、分享技术见解的地方。</p>
+    <p>欢迎访问我的 <a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a> 了解更多项目。</p>
+</div>

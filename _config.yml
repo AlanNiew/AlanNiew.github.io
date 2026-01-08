@@ -1,0 +1,40 @@
+# 站点配置
+title: Alan's Blog
+description: 个人技术博客，记录学习与成长
+author: AlanNiew
+email: your-email@example.com
+
+# GitHub配置
+github_username: AlanNiew
+baseurl: ""
+url: "https://alanniew.github.io"
+
+# 构建配置
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 排除文件
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore
+  - LICENSE
+  - README.md
+
+# 分页
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# 时区
+timezone: Asia/Shanghai
+
+# 语言
+lang: zh-CN
